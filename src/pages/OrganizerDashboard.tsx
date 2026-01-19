@@ -24,7 +24,6 @@ type ActiveSection = 'overview' | 'events' | 'registrations' | 'analytics' | 'ti
 
 const OrganizerDashboard = () => {
   const [activeSection, setActiveSection] = useState<ActiveSection>('overview');
-  const [activeSection, setActiveSection] = useState<ActiveSection>('overview');
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
   const navigate = useNavigate();
 
@@ -85,7 +84,7 @@ const OrganizerDashboard = () => {
                   key={tab.id}
                   onClick={() => {
                     setActiveSection(tab.id);
-                    if (tab.id !== 'registrations') setSelectedEventId(null);
+                    setSelectedEventId(null);
                   }}
                   className={`flex items-center gap-2 px-4 md:px-6 py-3 text-[11px] font-medium uppercase transition-colors ${
                     index > 0 ? 'border-l border-foreground' : ''
